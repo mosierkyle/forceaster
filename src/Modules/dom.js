@@ -1,4 +1,4 @@
-import { weatherData } from './api';
+import { weatherDataF, weatherDataC } from './api';
 const conditionDOM = document.querySelector('#condition');
 const conditionImgDOM = document.querySelector('#img');
 const cityDOM = document.querySelector('#city');
@@ -10,6 +10,22 @@ const humidityDOM = document.querySelector('#humidity');
 const searchBtn = document.querySelector('#btn');
 const searchInput = document.querySelector('#search-input');
 const background = document.querySelector('#weather');
+const degreeBtn = document.querySelector('#degree');
+const fp = document.querySelector('#f');
+const cp = document.querySelector('#c');
+let currentButton = 'f';
+
+const changeDegree = () => {
+  cp.style.fontWeight = '400';
+  fp.style.fontWeight = '400';
+  if (currentButton === 'f') {
+    currentButton = 'c';
+    cp.style.fontWeight = '800';
+  } else if (currentButton == 'c') {
+    currentButton = 'f';
+    fp.style.fontWeight = '800';
+  }
+};
 
 const changeBackground = (condition) => {
   if (
@@ -36,18 +52,33 @@ const changeBackground = (condition) => {
 };
 
 const updateWeather = async (place) => {
-  const weather = await weatherData(place);
-  changeBackground(weather.condition);
-  const cityUpper = weather.city.toUpperCase();
-  const regionUpper = weather.region.toUpperCase();
-  conditionDOM.textContent = `${weather.condition}`;
-  conditionImgDOM.src = `${weather.img}`;
-  cityDOM.textContent = `${cityUpper},`;
-  regionDOM.textContent = `${regionUpper}`;
-  tempDOM.textContent = `${Math.round(weather.temp)}\u00B0`;
-  feelsLikeDOM.textContent = `${Math.round(weather.feelsLike)}\u00B0`;
-  uvDOM.textContent = `${weather.uv}`;
-  humidityDOM.textContent = `${weather.humidity}%`;
+  if (currentButton === 'f') {
+    const weather = await weatherDataF(place);
+    changeBackground(weather.condition);
+    const cityUpper = weather.city.toUpperCase();
+    const regionUpper = weather.region.toUpperCase();
+    conditionDOM.textContent = `${weather.condition}`;
+    conditionImgDOM.src = `${weather.img}`;
+    cityDOM.textContent = `${cityUpper},`;
+    regionDOM.textContent = `${regionUpper}`;
+    tempDOM.textContent = `${Math.round(weather.temp)}\u00B0`;
+    feelsLikeDOM.textContent = `${Math.round(weather.feelsLike)}\u00B0`;
+    uvDOM.textContent = `${weather.uv}`;
+    humidityDOM.textContent = `${weather.humidity}%`;
+  } else if (currentButton === 'c') {
+    const weather = await weatherDataC(place);
+    changeBackground(weather.condition);
+    const cityUpper = weather.city.toUpperCase();
+    const regionUpper = weather.region.toUpperCase();
+    conditionDOM.textContent = `${weather.condition}`;
+    conditionImgDOM.src = `${weather.img}`;
+    cityDOM.textContent = `${cityUpper},`;
+    regionDOM.textContent = `${regionUpper}`;
+    tempDOM.textContent = `${Math.round(weather.temp)}\u00B0`;
+    feelsLikeDOM.textContent = `${Math.round(weather.feelsLike)}\u00B0`;
+    uvDOM.textContent = `${weather.uv}`;
+    humidityDOM.textContent = `${weather.humidity}%`;
+  }
 };
 
 const addEvents = () => {
@@ -63,6 +94,10 @@ const addEvents = () => {
       }
       updateWeather(searchInput.value);
     }
+  });
+  degreeBtn.addEventListener('click', () => {
+    changeDegree();
+    updateWeather(searchInput.value);
   });
 };
 

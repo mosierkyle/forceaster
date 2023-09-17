@@ -11,7 +11,41 @@ class weather {
   }
 }
 
-const weatherData = async (city) => {
+const weatherDataC = async (city) => {
+  if (city == '') {
+    console.log('Please Enter a City');
+  }
+  const response = await fetch(
+    `https://api.weatherapi.com/v1/current.json?key=5cbb10eadd1347dabf911239231609&q=${city}`,
+    { mode: 'cors' }
+  );
+  try {
+    const cityData = await response.json();
+    let name = cityData.location.name;
+    let region = cityData.location.region;
+    let temp = cityData.current.temp_c;
+    let condition = cityData.current.condition.text;
+    let img = cityData.current.condition.icon;
+    let uv = cityData.current.uv;
+    let feelsLike = cityData.current.feelslike_c;
+    let humidity = cityData.current.humidity;
+    const newWeather = new weather(
+      name,
+      region,
+      temp,
+      condition,
+      img,
+      uv,
+      feelsLike,
+      humidity
+    );
+    return newWeather;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const weatherDataF = async (city) => {
   if (city == '') {
     console.log('Please Enter a City');
   }
@@ -21,7 +55,6 @@ const weatherData = async (city) => {
       { mode: 'cors' }
     );
     const cityData = await response.json();
-    console.log(cityData);
     let name = cityData.location.name;
     let region = cityData.location.region;
     let temp = cityData.current.temp_f;
@@ -40,11 +73,10 @@ const weatherData = async (city) => {
       feelsLike,
       humidity
     );
-    console.log(newWeather);
     return newWeather;
   } catch (error) {
     console.log(error);
   }
 };
 
-export { weatherData };
+export { weatherDataF, weatherDataC };
