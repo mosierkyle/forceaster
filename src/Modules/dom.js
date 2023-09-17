@@ -14,6 +14,7 @@ const degreeBtn = document.querySelector('#degree');
 const fp = document.querySelector('#f');
 const cp = document.querySelector('#c');
 let currentButton = 'f';
+let currentPlace = 'San Luis Obispo California';
 
 const changeDegree = () => {
   cp.style.fontWeight = '400';
@@ -55,6 +56,7 @@ const updateWeather = async (place) => {
   if (currentButton === 'f') {
     const weather = await weatherDataF(place);
     changeBackground(weather.condition);
+    currentPlace = weather.city;
     const cityUpper = weather.city.toUpperCase();
     const regionUpper = weather.region.toUpperCase();
     conditionDOM.textContent = `${weather.condition}`;
@@ -68,6 +70,7 @@ const updateWeather = async (place) => {
   } else if (currentButton === 'c') {
     const weather = await weatherDataC(place);
     changeBackground(weather.condition);
+    currentPlace = weather.city;
     const cityUpper = weather.city.toUpperCase();
     const regionUpper = weather.region.toUpperCase();
     conditionDOM.textContent = `${weather.condition}`;
@@ -97,7 +100,7 @@ const addEvents = () => {
   });
   degreeBtn.addEventListener('click', () => {
     changeDegree();
-    updateWeather(searchInput.value);
+    updateWeather(currentPlace);
   });
 };
 
