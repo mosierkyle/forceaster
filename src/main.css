@@ -32,10 +32,14 @@
   justify-content: start;
   align-items: center;
   color: white;
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: bold;
-  padding-left: 1rem;
+  padding-left: 2rem;
   text-align: center;
+}
+
+#p2 {
+  color: rgb(23, 36, 41);
 }
 
 #search {
@@ -49,7 +53,7 @@
   justify-content: center;
   color: white;
   font-size: 1.2rem;
-  padding-right: 1rem;
+  padding-right: 2rem;
 }
 
 #search input {
@@ -72,6 +76,11 @@
   font-size: 1.1rem;
 }
 
+#search button:hover {
+  cursor: pointer;
+  background-color: rgb(15, 24, 27);
+}
+
 #search div {
   display: flex;
   flex-direction: row;
@@ -82,72 +91,90 @@
   grid-row: 2 / 3;
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-rows: 0.5fr 5fr;
-  padding: 0 2rem;
   background-color: rgb(246, 247, 247);
 }
 
-#weather-title {
-  grid-row: 1 / 2;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-#weather-panels {
-  grid-row: 2 / 3;
-  border-radius: 10px;
+#weather-panel {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-template-rows: repeat(auto-fill, 300px);
-  grid-auto-flow: column;
-  grid-auto-columns: 50px;
-  column-gap: 2rem;
-  padding: 1rem 0;
-}
-
-.weather-panel {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  grid-column: 1 / 2;
-  border-radius: 10px;
-  padding: 0.5rem 0.5rem;
+  grid-template-rows: 50px 100px 150px;
+  padding: 15vh;
+  padding-left: 25vw;
   background-color: rgba(0, 0, 0, 0.1);
+  height: 100%;
 }
 
-.name-div {
+#condition-div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#name-div {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+#img-div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.img-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.img {
+#img {
   object-fit: cover;
   border-radius: 10px;
 }
 
-.temp-div {
+#temp-info {
   display: flex;
-  justify-content: center;
+  gap: 1rem;
+  justify-content: start;
   align-items: center;
 }
 
-.condition-div {
+#temp-div {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
-.uv-div {
+#temp {
+  font-size: 7.5rem;
+  font-weight: 700;
+}
+
+#other-info {
+  border-left: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 7.5rem;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+#uv-div {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#feels-like-div {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#humidity-div {
+  font-size: 1.2rem;
+  font-weight: 500;
 }

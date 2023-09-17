@@ -8,39 +8,47 @@
   </head>
   <body>
     <div id="content">
-      
       <div id="input">
         <div id="logo">
-          <p>Weather App</p>
+          <p id="p1">Weather</p>
+          <p id="p2">App</p>
         </div>
         <div id="search">
           <div>
-            <input type="text" placeholder="Search Place"/>
-          <button type="button">Search</button>
+            <input type="text" placeholder="Search Place" />
+            <button type="button">Search</button>
           </div>
         </div>
       </div>
       <div id="weather">
-        <div id="weather-title">
-          <p id="title">Locations</p>
-        </div>
-        <div id="weather-panels">
-          <div class="weather-panel">
-            <div class="name-div">
-              <p class="name">Vancouver</p>
+        <div id="weather-panel">
+          <div id="condition-div">
+            <p id="condition">Sunny</p>
+            <div id="img-div">
+              <img
+                id="img"
+                src="//cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
             </div>
-            <div class="img-div">
-              <img class="img"src="//cdn.weatherapi.com/weather/64x64/day/113.png"/>
+          </div>
+          <div id="name-div">
+            <p id="city">VANCOUVER,</p>
+            <p id="region">WASHINGTON</p>
+          </div>
+          <div id="temp-info">
+            <div id="temp-div">
+              <p id="temp">78&deg</p>
             </div>
-            <div class="temp-div">
-              <p class="temp">78</p>
-            </div>
-            <div class="condition-div">
-              <p class="condition">Sunny</p>
-            </div>
-            <div class="uv-div">
-              <p class="uv">9</p>
-            </div>
+            <div id="other-info">
+              <div id="feels-like-div">
+                <p id="feels-like">Feels Like: 75&deg</p>
+              </div>
+              <div id="uv-div">
+                <p id="uv">UV: 9</p>
+              </div>
+              <div id="humidity-div">
+                <p id="humidity">Humidity: 25%</p>
+              </div>
             </div>
           </div>
         </div>
