@@ -13,7 +13,7 @@
     rgb(148, 148, 148),
     rgba(175, 206, 239, 0.715)
   );
-  --rainy: linear-gradient(180deg, rgb(144, 144, 144), rgb(254, 255, 247));
+  --rainy: linear-gradient(180deg, rgb(144, 144, 144), rgb(208, 208, 208));
   --clear: linear-gradient(180deg, rgb(254, 255, 247), rgb(135, 173, 208));
 }
 
