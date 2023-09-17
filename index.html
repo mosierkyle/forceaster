@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div id="content">
+      <div id="input">
+        <div id="logo">
+          <p id="p1">Weather</p>
+          <p id="p2">App</p>
+        </div>
+        <div id="search">
+          <div>
+            <input id="search-input" type="text" placeholder="Search Place" />
+            <button id="btn" type="button">Search</button>
+          </div>
+        </div>
+        <div id="degree-div">
+          <div id="degree">
+            <p id="f">&deg;F</p>
+            <p>/</p>
+            <p id="c">&deg;C</p>
+          </div>
+        </div>
+      </div>
+      <div id="weather">
+        <div id="weather-panel">
+          <div id="condition-div">
+            <p id="condition">Sunny</p>
+            <div id="img-div">
+              <img
+                id="img"
+                src="//cdn.weatherapi.com/weather/64x64/day/113.png"
+              />
+            </div>
+          </div>
+          <div id="name-div">
+            <p id="city"></p>
+            <p id="region"></p>
+          </div>
+          <div id="temp-info">
+            <div id="temp-div">
+              <p id="temp"></p>
+            </div>
+            <div id="other-info">
+              <div id="feels-like-div">
+                <p>Feels Like:</p>
+                <p class="p2" id="feels-like"></p>
+              </div>
+              <div id="uv-div">
+                <p>UV:</p>
+                <p class="p2" id="uv"></p>
+              </div>
+              <div id="humidity-div">
+                <p>Humidity:</p>
+                <p class="p2" id="humidity"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
