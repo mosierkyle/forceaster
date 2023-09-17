@@ -1,10 +1,13 @@
 class weather {
-  constructor(city, temp, condition, img, uv) {
+  constructor(city, region, temp, condition, img, uv, feelsLike, humidity) {
     this.city = city;
+    this.region = region;
     this.temp = temp;
     this.condition = condition;
     this.img = img;
     this.uv = uv;
+    this.feelsLike = feelsLike;
+    this.humidity = humidity;
   }
 }
 
@@ -20,11 +23,23 @@ const weatherData = async (city) => {
     const cityData = await response.json();
     console.log(cityData);
     let name = cityData.location.name;
+    let region = cityData.location.region;
     let temp = cityData.current.temp_f;
     let condition = cityData.current.condition.text;
     let img = cityData.current.condition.icon;
     let uv = cityData.current.uv;
-    const newWeather = new weather(name, temp, condition, img, uv);
+    let feelsLike = cityData.current.feelslike_f;
+    let humidity = cityData.current.humidity;
+    const newWeather = new weather(
+      name,
+      region,
+      temp,
+      condition,
+      img,
+      uv,
+      feelsLike,
+      humidity
+    );
     console.log(newWeather);
     return newWeather;
   } catch (error) {
