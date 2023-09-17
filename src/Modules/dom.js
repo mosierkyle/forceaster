@@ -56,7 +56,7 @@ const updateWeather = async (place) => {
   if (currentButton === 'f') {
     const weather = await weatherDataF(place);
     changeBackground(weather.condition);
-    currentPlace = weather.city;
+    currentPlace = `${place}`;
     const cityUpper = weather.city.toUpperCase();
     const regionUpper = weather.region.toUpperCase();
     conditionDOM.textContent = `${weather.condition}`;
@@ -70,7 +70,7 @@ const updateWeather = async (place) => {
   } else if (currentButton === 'c') {
     const weather = await weatherDataC(place);
     changeBackground(weather.condition);
-    currentPlace = weather.city;
+    currentPlace = `${place}`;
     const cityUpper = weather.city.toUpperCase();
     const regionUpper = weather.region.toUpperCase();
     conditionDOM.textContent = `${weather.condition}`;
