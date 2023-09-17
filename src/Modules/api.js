@@ -18,11 +18,13 @@ const weatherData = async (city) => {
       { mode: 'cors' }
     );
     const cityData = await response.json();
+    console.log(cityData);
+    let name = cityData.location.name;
     let temp = cityData.current.temp_f;
     let condition = cityData.current.condition.text;
     let img = cityData.current.condition.icon;
     let uv = cityData.current.uv;
-    const newWeather = new weather(city, temp, condition, img, uv);
+    const newWeather = new weather(name, temp, condition, img, uv);
     console.log(newWeather);
     return newWeather;
   } catch (error) {
