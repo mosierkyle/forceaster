@@ -6,6 +6,16 @@
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+:root {
+  --sunny: linear-gradient(190deg, rgb(247, 255, 142), rgb(88, 158, 228));
+  --cloudy: linear-gradient(
+    190deg,
+    rgb(148, 148, 148),
+    rgba(175, 206, 239, 0.715)
+  );
+  --rainy: linear-gradient(190deg, rgb(254, 255, 247), rgb(144, 144, 144));
+}
+
 #content {
   display: grid;
   grid-template-rows: 120px 5fr;
@@ -89,9 +99,9 @@
 
 #weather {
   grid-row: 2 / 3;
-  height: 100%;
+  height: 80%;
   width: 100%;
-  background-color: rgb(246, 247, 247);
+  background-image: var(--sunny);
 }
 
 #weather-panel {
@@ -99,7 +109,6 @@
   grid-template-rows: 50px 100px 150px;
   padding: 15vh;
   padding-left: 25vw;
-  background-color: rgba(0, 0, 0, 0.1);
   height: 100%;
 }
 
@@ -159,22 +168,36 @@
   height: 7.5rem;
   padding: 1rem;
   gap: 1.5rem;
+  color: white;
 }
 
 #uv-div {
-  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
   font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
 }
 
 #feels-like-div {
   font-size: 1.2rem;
   font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
 }
 
 #humidity-div {
   font-size: 1.2rem;
   font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.p2 {
+  color: black;
+  font-size: 1.3rem;
 }
