@@ -9,9 +9,35 @@ const uvDOM = document.querySelector('#uv');
 const humidityDOM = document.querySelector('#humidity');
 const searchBtn = document.querySelector('#btn');
 const searchInput = document.querySelector('#search-input');
+const background = document.querySelector('#weather');
+
+const changeBackground = (condition) => {
+  if (
+    condition == 'Cloudy' ||
+    condition == 'Overcast' ||
+    condition == 'Partly cloudy' ||
+    condition == 'Fog'
+  ) {
+    background.style.backgroundImage = 'var(--cloudy)';
+  } else if (condition == 'Sunny') {
+    background.style.backgroundImage = 'var(--sunny)';
+  } else if (
+    condition == 'Light rain' ||
+    condition == 'Moderate rain' ||
+    condition == 'Heavy rain' ||
+    condition == 'mist' ||
+    condition == 'Light drizzle' ||
+    condition.includes('rain')
+  ) {
+    background.style.backgroundImage = 'var(--rainy)';
+  } else if (condition == 'clear') {
+    background.style.backgroundImage = 'var(--clear)';
+  }
+};
 
 const updateWeather = async (place) => {
   const weather = await weatherData(place);
+  changeBackground(weather.condition);
   const cityUpper = weather.city.toUpperCase();
   const regionUpper = weather.region.toUpperCase();
   conditionDOM.textContent = `${weather.condition}`;

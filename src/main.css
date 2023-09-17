@@ -9,11 +9,12 @@
 :root {
   --sunny: linear-gradient(190deg, rgb(247, 255, 142), rgb(88, 158, 228));
   --cloudy: linear-gradient(
-    190deg,
+    180deg,
     rgb(148, 148, 148),
     rgba(175, 206, 239, 0.715)
   );
-  --rainy: linear-gradient(190deg, rgb(254, 255, 247), rgb(144, 144, 144));
+  --rainy: linear-gradient(180deg, rgb(144, 144, 144), rgb(254, 255, 247));
+  --clear: linear-gradient(180deg, rgb(254, 255, 247), rgb(135, 173, 208));
 }
 
 #content {
@@ -70,7 +71,7 @@
   border: none;
   background-color: white;
   height: 2.5rem;
-  border-radius: 2.5px 0 0 2.5px;
+  border-radius: 5px 0 0 5px;
   width: 500px;
   padding-left: 0.5rem;
   font-size: 1.1rem;
@@ -82,7 +83,7 @@
   border: none;
   padding: 0 0.5rem;
   color: rgb(246, 247, 247);
-  border-radius: 0 2.5px 2.5px 0;
+  border-radius: 0 5px 5px 0;
   font-size: 1.1rem;
 }
 
@@ -117,7 +118,7 @@
   justify-content: start;
   align-items: center;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 #name-div {
@@ -200,4 +201,5 @@
 .p2 {
   color: black;
   font-size: 1.3rem;
+  font-weight: 700;
 }
