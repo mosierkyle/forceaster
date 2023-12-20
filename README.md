@@ -1,4 +1,8 @@
 # Weather-app
 
-A simple weather forecast web app
-LIVE DEMO - https://mosierkyle.github.io/Weather-app/
+Weather forecast web app
+
+Live Demo - https://mosierkyle.github.io/Weather-app/
+
+Preview:
+![preview](src/preview.png)
