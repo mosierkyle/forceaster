@@ -1,4 +1,4 @@
-# Weather-app
+# Forecaster
 
 Weather forecast web app
 
